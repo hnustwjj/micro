@@ -18,9 +18,11 @@ importers:
       core-js: ^3.8.3
       typescript: ~4.5.5
       vue: ^3.2.13
+      vue-router: ^4.1.5
     dependencies:
       core-js: 3.25.5
       vue: 3.2.40
+      vue-router: 4.1.5_vue@3.2.40
     devDependencies:
       '@vue/cli-plugin-babel': 5.0.8_4ai7lnwvrmuvdltp3mf3vo3dw4
       '@vue/cli-plugin-typescript': 5.0.8_scxwwu5p4wk5z5qopp6ccj5ley
@@ -2058,6 +2060,10 @@ packages:
       - walrus
       - whiskers
     dev: true
+
+  /@vue/devtools-api/6.4.3:
+    resolution: {integrity: sha512-9WCRwdROJvWcHAdyrR7SZMM/qUvllDZnpndHXokThkUsjnJ2xe4/pvsH9FZrxFe22L+JmDKczL79HjLJ7DK9rg==}
+    dev: false
 
   /@vue/reactivity-transform/3.2.40:
     resolution: {integrity: sha512-HQUCVwEaacq6fGEsg2NUuGKIhUveMCjOk8jGHqLXPI2w6zFoPrlQhwWEaINTv5kkZDXKEnCijAp+4gNEHG03yw==}
@@ -6455,6 +6461,15 @@ packages:
       loader-utils: 2.0.2
       webpack: 5.74.0
     dev: true
+
+  /vue-router/4.1.5_vue@3.2.40:
+    resolution: {integrity: sha512-IsvoF5D2GQ/EGTs/Th4NQms9gd2NSqV+yylxIyp/OYp8xOwxmU8Kj/74E9DTSYAyH5LX7idVUngN3JSj1X4xcQ==}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      '@vue/devtools-api': 6.4.3
+      vue: 3.2.40
+    dev: false
 
   /vue-style-loader/4.1.3:
     resolution: {integrity: sha512-sFuh0xfbtpRlKfm39ss/ikqs9AbKCoXZBpHeVZ8Tx650o0k0q/YCM7FRvigtxpACezfq6af+a7JeqVTWvncqDg==}
