@@ -1,4 +1,4 @@
-import { registerMicroApps } from "../../micro/start";
+import { registerMicroApps, start } from "../../micro/start";
 export const subList = [
   {
     name: "vue3",
@@ -20,4 +20,7 @@ export const subList = [
   },
 ];
 
-export default () => registerMicroApps(subList);
+export default () => {
+  registerMicroApps(subList);
+  start();
+};
