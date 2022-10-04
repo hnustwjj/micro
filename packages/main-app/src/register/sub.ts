@@ -21,6 +21,8 @@ export const subList = [
 ];
 
 export default () => {
+  // 注册子应用
   registerMicroApps(subList);
+  // 运行微前端
   start();
 };
