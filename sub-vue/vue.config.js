@@ -3,11 +3,11 @@ const packageName = require("./package.json").name;
 const port = 9002;
 module.exports = defineConfig({
   transpileDependencies: true,
-  devServer: { port },
+  devServer: { port, headers: { "Access-Control-Allow-Origin": "*" } },
   configureWebpack: {
     output: {
       library: `${packageName}-[name]`,
-      libraryTarget: 'umd',
+      libraryTarget: "umd",
       // jsonpFunction: `webpackJsonp_${packageName}`,
     },
   },

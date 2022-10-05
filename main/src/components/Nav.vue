@@ -1,10 +1,10 @@
 <template>
   <div v-for="item in navList" :key="item.name">
-    <router-link :to="item.path">{{item.name}}</router-link>
+    <div @click="()=>$router.push(item.path)">{{item.name}}</div>
   </div>
 </template>
 <script lang="ts" setup>
 const navList = [
-  { name: "vue3-subapp", path: "/vue3-subapp" }
+  { name: "vue3-subapp", path: "/subapp/app-vue" }
 ]
 </script>

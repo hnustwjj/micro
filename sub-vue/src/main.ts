@@ -1,23 +1,27 @@
-import { createApp } from "vue";
-import App from "./App.vue";
+import { createApp ,App} from "vue";
+import AppC from "./App.vue";
+let app: App | null = null;
 
-const render = () => {
-  createApp(App).mount("#root");
+const render = (props: any) => {
+  const { container } = props;
+  app = createApp(AppC);
+  app.mount(container ? container.querySelector("#app") : "#app");
 };
-
-// 环境判断
-if (!(window as any).__MICRO__) {
-  render();
-}
 
 export const bootstrap = async () => {
   console.log("bootstrap");
 };
 
-export const mount = async () => {
-  render();
+export const mount = async props => {
+  render(props);
 };
 
 export const unmount = async () => {
   console.log("unmount");
+  app?.unmount()
+  app = null
 };
+// 环境判断
+if (!(window as any).__MICRO__) {
+  mount({});
+}

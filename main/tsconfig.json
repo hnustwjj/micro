@@ -7,6 +7,7 @@
     "moduleResolution": "node",
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "noImplicitAny": false,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "useDefineForClassFields": true,
@@ -21,7 +22,7 @@
       ]
     },
     "lib": [
-      "esnext",
+      "ESNext",
       "dom",
       "dom.iterable",
       "scripthost"
