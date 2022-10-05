@@ -1,6 +1,6 @@
 const { defineConfig } = require("@vue/cli-service");
 const packageName = require("./package.json").name;
-const port = 9002;
+const port = 9003;
 module.exports = defineConfig({
   transpileDependencies: true,
   devServer: { port, headers: { "Access-Control-Allow-Origin": "*" } },

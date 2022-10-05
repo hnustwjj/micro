@@ -6,7 +6,7 @@ import { registerMicroApps, start } from "../../micro-fe";
 registerMicroApps([
   {
     name: "app-vue",
-    entry: "//localhost:9002",
+    entry: "//localhost:9003",
     container: "#sub-container",
     activeRule: "/subapp/app-vue",
   },
