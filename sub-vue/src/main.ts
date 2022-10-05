@@ -1,4 +1,5 @@
 import { createApp ,App} from "vue";
+import './public-path'
 import AppC from "./App.vue";
 let app: App | null = null;
 
@@ -23,6 +24,6 @@ export const unmount = async () => {
   app = null
 };
 // 环境判断
-if (!(window as any).__MICRO__) {
+if (!(window as any).__POWERED_BY_QIANKUN__) {
   mount({});
 }

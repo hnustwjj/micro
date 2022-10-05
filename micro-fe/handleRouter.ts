@@ -25,7 +25,8 @@ export default async function () {
   }
 
   // 在执行之前，还需要挂载一个全局变量，让子应用的render不是自己执行，而是被我们的框架所调用
-  (window as any).__MICRO__ = true;
+  (window as any).__POWERED_BY_QIANKUN__ = true;
+  (window as any).__INJECTED_PUBLIC_PATH_BY_QIANKUN__ = activeApp.entry
   // 执行脚本，获取对应的生命周期钩子
   const appExports: any = await execScript();
   activeApp.mount = appExports.mount;

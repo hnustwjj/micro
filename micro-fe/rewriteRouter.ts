@@ -9,7 +9,11 @@ export default function () {
   // hash ->  window.onhashchange
   // history -> (go,back,forward) window.onpopstate
   //         -> (pushState,replaceState) 重写函数
-  window.addEventListener("popstate", handleRouter);
+  window.addEventListener("popstate", ()=>{
+    preRoute = nextRoute  // 之前的
+    nextRoute = window.location.pathname  // 最新的
+    handleRouter()
+  });
 
   const rawPushState = window.history.pushState;
   window.history.pushState = (...args) => {
