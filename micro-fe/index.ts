@@ -1,6 +1,6 @@
 import rewriteRouter from "./rewriteRouter";
 import handleRouter from "./handleRouter";
-type SubApp = {
+export type SubApp = {
   name: string;
   entry: string;
   container: string;

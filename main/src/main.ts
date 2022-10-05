@@ -10,10 +10,15 @@ registerMicroApps([
     container: "#sub-container",
     activeRule: "/subapp/app-vue",
   },
+  {
+    name: "app-vue",
+    entry: "//localhost:9003",
+    container: "#sub-container",
+    activeRule: "/subapp/app-vue2",
+  },
 ]);
 start();
 createApp(App).use(router).mount("#app");
-
 
 /**
 

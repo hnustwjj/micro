@@ -5,6 +5,7 @@
 </template>
 <script lang="ts" setup>
 const navList = [
-  { name: "vue3-subapp", path: "/subapp/app-vue" }
+  { name: "first vue", path: "/subapp/app-vue" },
+  { name: "second vue", path: "/subapp/app-vue2" },
 ]
 </script>

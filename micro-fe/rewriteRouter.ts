@@ -1,4 +1,10 @@
 import handleRouter from "./handleRouter";
+let preRoute: string | null = null;
+let nextRoute: string | null = null;
+
+export const getPreRoute = () => preRoute;
+export const getNextRoute = () => nextRoute;
+
 export default function () {
   // hash ->  window.onhashchange
   // history -> (go,back,forward) window.onpopstate
@@ -7,8 +13,10 @@ export default function () {
 
   const rawPushState = window.history.pushState;
   window.history.pushState = (...args) => {
+    preRoute = window.location.pathname;
     rawPushState.apply(window.history, args);
-    handleRouter()
+    nextRoute = window.location.pathname;
+    handleRouter();
   };
 
   // const rawReplaceState = window.history.replaceState;

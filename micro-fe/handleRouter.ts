@@ -1,10 +1,18 @@
-import { getApps } from "./";
+import { getNextRoute, getPreRoute } from "./rewriteRouter";
+import { getApps, SubApp } from "./";
 import importHtml from "./importHtml";
 
 // 处理路由变化
 export default async function () {
+  const apps = getApps();
+  // 先卸载上一个应用
+  const preApp = matchActiveApp(apps, getPreRoute() || "");
+  if(preApp){
+    await unmount(preApp)
+  }
+
   // 2:匹配子应用
-  const activeApp = matchActiveApp();
+  const activeApp = matchActiveApp(apps, getNextRoute() || "");
   if (!activeApp) {
     return;
   }
@@ -32,11 +40,9 @@ export default async function () {
   console.log(activeApp);
 }
 
-function matchActiveApp() {
+function matchActiveApp(apps: SubApp[], path?: string) {
   // 获取当前路由路径
-  const path = window.location.pathname;
-  const apps = getApps();
-  const activeApp = apps.find(item => path.startsWith(item.activeRule));
+  const activeApp = apps.find(item => path?.startsWith(item.activeRule));
   return activeApp;
 }
 

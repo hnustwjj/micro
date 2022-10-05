@@ -13,6 +13,7 @@ export const bootstrap = async () => {
 };
 
 export const mount = async props => {
+  console.log('mount')
   render(props);
 };
 
