@@ -7,6 +7,8 @@ export const getNextRoute = () => nextRoute;
 
 export default function () {
   // hash ->  window.onhashchange
+
+  
   // history -> (go,back,forward) window.onpopstate
   //         -> (pushState,replaceState) 重写函数
   window.addEventListener("popstate", ()=>{
@@ -23,9 +25,9 @@ export default function () {
     handleRouter();
   };
 
-  // const rawReplaceState = window.history.replaceState;
-  // window.history.replaceState = (...args) => {
-  //   rawReplaceState.apply(window.history, args);
-  //   handleRouter()
-  // };
+  const rawReplaceState = window.history.replaceState;
+  window.history.replaceState = (...args) => {
+    rawReplaceState.apply(window.history, args);
+    handleRouter()
+  };
 }

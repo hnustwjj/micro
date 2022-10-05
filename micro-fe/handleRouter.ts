@@ -23,20 +23,22 @@ export default async function () {
   if (container) {
     container.appendChild(template);
   }
-
   // 在执行之前，还需要挂载一个全局变量，让子应用的render不是自己执行，而是被我们的框架所调用
   (window as any).__POWERED_BY_QIANKUN__ = true;
   (window as any).__INJECTED_PUBLIC_PATH_BY_QIANKUN__ = activeApp.entry
   // 执行脚本，获取对应的生命周期钩子
   const appExports: any = await execScript();
+
+
+  // 4:渲染子应用
+
   activeApp.mount = appExports.mount;
   activeApp.unmount = appExports.unmount;
   activeApp.bootstrap = appExports.bootstrap;
-
+  
   await bootstrap(activeApp);
   await mount(activeApp);
 
-  // 4:渲染子应用
 
   console.log(activeApp);
 }
